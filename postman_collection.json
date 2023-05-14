@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "ef6a2061-b2f2-4d5a-9eee-b462ec419eb1",
+		"name": "Waste Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Donor",
+			"item": [
+				{
+					"name": "All donors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/donors/all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"donors",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Ngo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"ngo1\",\n    \"password\":\"n1234\",\n    \"employees\": 12,\n    \"email\": \"ngo1@gmail.com\",\n    \"mobile\": \"9373055717\",\n    \"address\":\"Kolhapur\",\n    \"ngo_proof\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/ngo/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"ngo",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Ngos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/ngo/all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"ngo",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Donor profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/donor/profile/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"donor",
+								"profile",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add food items",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"food_type\": \"veg\",\n    \"quantity\": 2,\n    \"cooked_time\": \"3:20\",\n    \"expiry_date\": \"2021/09/10\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/donor/add/food/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"donor",
+								"add",
+								"food",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Donor Sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"suraj@gmail.com\",\n    \"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/donor/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"donor",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Donor Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"donorName\": \"prithvi\",\n    \"donorAddress\": \"pune\",\n    \"donorMobile\": \"1234567890\",\n    \"donorEmail\": \"prithvi@gmail.com\",\n    \"donorPassword\": \"1234\",\n    \"donorType\": \"\",\n    \"role\": \"donor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/donor/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"donor",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ngo Change password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"ngo1\",\n    \"password\": \"n1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/ngo/forgotPassword",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"ngo",
+								"forgotPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Donor Change password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"suraj@gmail.com\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/donor/forgotPassword",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"donor",
+								"forgotPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ngo",
+			"item": [
+				{
+					"name": "Ngo profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/ngo/profile/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"ngo",
+								"profile",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Oder food",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"ordered\",\n    \"ngo_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/ngo/order/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"ngo",
+								"order",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:4000"
+		}
+	]
+}

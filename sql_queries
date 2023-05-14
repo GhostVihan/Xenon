@@ -1,0 +1,11 @@
+
+create database food_waste_management;
+create table donor(donor_id int primary key auto_increment, donor_name varchar(100), donor_address varchar(500), donor_mobile varchar(20), donor_email varchar(100), donor_password varchar(128), donor_type varchar(20), role varchar(20));
+
+create table client(client_id int primary key auto_increment, client_name varchar(100), client_address varchar(500), client_mobile varchar(20), client_email varchar(100), client_password varchar(128));
+
+create table ngo(ngo_id int primary key auto_increment, username varchar(100), password varchar(128), employees int, email varchar(100), mobile varchar(20), address varchar(255), ngo_proof varchar(100));
+
+create table donate_items(item_id int primary key auto_increment, item_name varchar(50), category_name varchar(50), quantity varchar(50), cooked_time time, expiry_date date, status varchar(20), donor_id int, CONSTRAINT FK_donor_id foreign key (donor_id) references donor(donor_id));
+
+create table orders(order_id int primary key auto_increment, status varchar(30), ngo_id int, item_id int, donor_id int,  CONSTRAINT FK_ngo_id foreign key (ngo_id) references ngo(ngo_id), CONSTRAINT FK_item_id foreign key (item_id) references donate_items(item_id), CONSTRAINT FKO_donor_id foreign key (donor_id) references donor(donor_id));
